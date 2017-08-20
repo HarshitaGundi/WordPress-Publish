@@ -1,0 +1,125 @@
+  <!DOCTYPE html>
+    <html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Post to WordPress
+        </title>
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <link href="css/matlab-highlighter.css" rel="stylesheet">
+        <script type="text/javascript" src="js/jquery.js">
+        </script>
+        <script src="js/bootstrap.min.js">
+        </script>
+        <script type="text/javascript" src="js/namespace.js">
+        </script>
+        <script type="text/javascript" src="js/mimic.js">
+        </script>
+        <script type="text/javascript" src="js/wordpress.js">
+        </script>
+        <script type="text/javascript" src="js/base64.js">
+        </script>
+        <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.0.min.js">
+        </script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js">
+        </script>
+        <script src="http://code.jquery.com/ui/1.11.1/jquery-ui.min.js">
+        </script>
+        <link rel="stylesheet" href="https://code.jquery.com/ui/1.11.1/themes/smoothness/jquery-ui.css" />
+        
+         <script type="text/javascript" src="js/WordPress_authenticate12.js">
+        </script>
+    </head>
+    <body>
+        <img src="http://www.mathworks.com/images/responsive/global/pic-header-mathworks-logo.png" alt="Mathworks" style="margin-top:23px;margin-left:10px; ">
+        <div id=t itleblock style="width:auto;height:52px;margin-top: 8px ;background-color: #2f7eb2;">
+            <img src="images/heading.png" style=" color:white; margin-top:5px;margin-left:14px;padding-top:10px;font-style: normal;
+                                                        font-variant: normal;
+                                                        font-weight: 300;
+                                                        font-stretch: normal;
+                                                        font-size: 28px;
+                                                        line-height: 1;
+                                                        font-family: " futura-pt-i4 ", "futura-pt ", "Arial ", "Helvetica ", sans-serif;letter-spacing: -.02em;float: left;">
+            <br>
+        </div>
+        <div class="container">
+            <div class="row">
+                <form class="form-horizontal" style="margin-top:100px;margin-left:20px;margin-right:20px;" action>
+                    <div class="form-group">
+                        <label for="posttitle" class="col-sm-2 control-label">Post Title
+                        </label>
+                        <div class="col-sm-10">
+                            <div id="posttitle">
+                                <input type="text" class="form-control" id="title" value=" " style="width:400px;" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="url" class="col-sm-2 control-label">Blog URL
+                        </label>
+                        <div class="col-sm-10">
+                            <input type="url" class="form-control" id="url" style="width:400px;">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="text" class="col-sm-2 control-label">Username
+                        </label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="username" placeholder="Username" style="width:400px;">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="password" class="col-sm-2 control-label">Password
+                        </label>
+                        <div class="col-sm-10">
+                            <input type="password" class="form-control" id="password" onkeydown="buttonsactive();" placeholder="Password" style="width:400px;">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">
+                            Publish Status
+                        </label>
+                        <div class="col-sm-10">
+                            <select id="setstatus" style="color:#555;">
+                                <option value="publish"> Publish
+                                </option>
+                                <option value="draft"> Draft
+                                </option>
+                            </select>
+                        </div>
+                    </div>
+                    <a href="  " id="posturl"> </a>
+                    <!-- start of changes by Harshita Gundi -->
+                    <div class="form-group">
+                        <div class="col-sm-offset-2 col-sm-10">
+                            <div id="dialog">
+                                <input type="radio" name="group1" value="newpost">
+                                <b>New post.Do not overwrite</b>
+                                <br>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-sm-10">
+                                     <div id="wrappaer" style="width:500px;margin-left:0;position: relative;">
+                                        <input type="button" class="btn btn-primary" style="display: inline-block; width: auto; background-color:  #337ab7; height: auto;  position: relative;" onclick="cancel();" value="Cancel" />
+                                        <input type="button" disabled class="btn btn-primary" id="overwrite" style="display: inline-block; width: auto;  height: auto; background-color:  #337ab7; margin-left:8%; position: relative;" onclick="overwriteArticle();" value="Update Existing Post" />
+                                        <input type="button" disabled class="btn btn-primary" id="postbutton" style="display: inline-block; width: auto;  height: auto; background-color:  #337ab7; margin-left: 8%;margin-right:10% position: relative;" onclick="postArticle();" value="Post to Blog" />
+                                    </div>
+                                    <div id="spinner" style="display: none;margin-left:25%;margin-top:10%;position: relative;">
+                                        <img src="images/page-loader_blue.gif" alt="loading..." style="height:50px;width:50px; margin-left:25% position:relative">
+                                        <br>
+                                    </div>
+                                    <div id="spinmsg" style="display: none;margin-left:1%;margin-top:2% ;position: relative; ">
+                                        <p style="margin-left:1%;position:relative; font-family:sans-serif;"> Redirecting to WordPress. Please refresh your blog if the post is not visible.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+     
+    </body>
+    </html>
